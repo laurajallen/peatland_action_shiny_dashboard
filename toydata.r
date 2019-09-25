@@ -24,6 +24,43 @@ for(s in 1:length(sites[,1])){
   }
 sites$Project.name <- randomnames ## replace real names with random ones
 
+randomstatus <- c(NULL)
+for(s in 1:length(sites[,1])){
+  names <- sample(c("complete","in progress","other"),1)
+  name <- str_c(names, sep = "",collapse="")
+  randomstatus <- c(randomstatus,name)
+}
+sites$Project.status <- randomstatus ## replace real names with random ones
+
+randomyn <- c(NULL)
+for(s in 1:length(sites[,1])){
+  names <- sample(c("yes","no"),1)
+  name <- str_c(names, sep = "",collapse="")
+  randomyn <- c(randomyn,name)
+}
+sites$Hydrology.monitoring <- randomyn ## replace real names with random ones
+sites$Peat.condition.data <- randomyn
+sites$Peat.depth.data <- randomyn
+sites$Vegetation.data <- randomyn
+
+randomyear <- c(NULL)
+for(s in 1:length(sites[,1])){
+  names <- sample(c("2012-13","2013-14","2014-15","2015-16","2017-18","2018-19"),1)
+  name <- str_c(names, sep = "",collapse="")
+  randomyear <- c(randomyear,name)
+}
+sites$Financial.year<- randomyear ## replace real names with random ones
+
+randomLA <- c(NULL)
+for(s in 1:length(sites[,1])){
+  names <- sample(LETTERS[1:15],1)
+  name <- str_c(names, sep = "",collapse="")
+  randomLA <- c(randomLA,name)
+}
+sites$Local.authority<- randomLA ## replace real names with random ones
+
+
+
 randomids <- c(NULL)
 for(s in 1:length(sites[,1])){
   nums <- sample(c(1:9),6)
